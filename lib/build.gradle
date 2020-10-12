@@ -55,7 +55,7 @@ ext {
     CBL_SITE_URL = 'https://developer.couchbase.com/mobile/'
 
     BUILD_TIME = Instant.now().toString()
-    BUILD_RELEASE = file("$ROOT_DIR/version.txt").text.trim()
+    BUILD_RELEASE = "3.4.2"
     BUILD_NUMBER = (project.hasProperty("buildNumber") && buildNumber) ? buildNumber : "SNAPSHOT"
     BUILD_VERSION = "${BUILD_RELEASE}-${BUILD_NUMBER}"
     BUILD_COMMIT = getBuildCommit()
@@ -208,7 +208,7 @@ dependencies {
     compileOnly 'com.google.code.findbugs:annotations:3.0.1'
 
     //noinspection GradleDependency
-    implementation 'com.squareup.okhttp3:okhttp:3.14.4'
+    api 'com.squareup.okhttp3:okhttp:3.14.4'
 
     testImplementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$KOTLIN_VERSION"
     testImplementation 'junit:junit:4.12'
